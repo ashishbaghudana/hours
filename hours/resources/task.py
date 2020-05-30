@@ -21,7 +21,8 @@ class TaskResource(Resource):
             return {'error': 'Not found'}, 404
 
     def put(self, task_id):
-        # Do not update tags, child_tasks, parent_tasks as part of this API call
+        # Do not update tags, child_tasks, parent_tasks as part of this API 
+        # call
         data = request.get_json()
         try:
             update_values = TaskSchema(partial=True).load(data)

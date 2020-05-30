@@ -13,7 +13,7 @@ class TimeBlockSchema(Schema):
 
     @validates_schema
     def validate_activity_type(self, data, **kwargs):
-        if (data['activity_type'] is 'task'):
+        if (data['activity_type'] == 'task'):
             try:
                 assert (data['task'] is not None)
             except:
